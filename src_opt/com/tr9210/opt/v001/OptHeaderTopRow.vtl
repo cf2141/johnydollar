@@ -1,0 +1,18 @@
+<div id="guestMenu">
+<ul>
+<li>$insert.control("accountLbl")</li>
+#foreach($key in $control.actionKeys)
+    #set($action = $control.getActionByKey($key))
+    #if ($action.enabled)
+        <li class="active">
+            <a href="$control.createActionURL("click","$key")">$action.title</a>
+        </li>
+    #else
+        <li>
+            <a href="$control.createActionURL("click","$key")">$action.title</a>
+        </li>
+    #end
+#end
+</ul>
+</div>
+

@@ -1,0 +1,19 @@
+## #if($control.getErrorMessage() != "")
+## <div style="background-color: red; color: #fff; font-size: 8pt;">$control.getErrorMessage()</div>
+## #end
+<table class="datatable" width="100%" cellspacing="0" cellpadding="0" style="table-layout: fixed;">
+	<tr>
+		<th width="170">Property</th>
+		<th>Value </th>
+	</tr>
+	#foreach($prop in $control.getPropertyNames())
+	<tr>
+		<td width="100"><b>$prop</b></td>
+		##<td>$insert.control($control.getControlName($prop))</td>
+		## the line above is really fascinating
+		##
+		## the line below acheives the objective
+		<td>$control.getControlName($prop)</td>
+	</tr>
+	#end
+</table>

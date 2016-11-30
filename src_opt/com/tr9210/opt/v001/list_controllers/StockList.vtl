@@ -1,0 +1,14 @@
+<div id="guestMenu">
+<ul>
+<li>
+  $insert.control("showAll")
+</li>
+#foreach ($key in $control.actionKeys)
+    #set($action = $control.getActionByKey($key))
+    <li>
+    <a href="$control.createActionURL("click","$key")">$action.title</a></br>
+    </li>
+#end
+</ul>
+</div>
+

@@ -1,0 +1,28 @@
+</br>
+##Summary Table  $insert.control("trxCount")</br>
+</br>
+<table>
+## start header row
+  ## column
+  #foreach ($c in $control.getColumns())
+  <th>
+      $control.getValue($control.getHeaderRow(),$c)
+  </th>
+  #end
+  ## end column
+
+## end header row
+##foreach($r in $control.getRows())
+#foreach($r in $control.getDataRows())
+<tr>
+  ## column
+  #foreach ($c in $control.getColumns())
+  <td  align="right">
+      $control.getValue($r,$c)
+  </td>
+  #end
+  ## end column
+</tr>
+#end
+## end row
+</table>
